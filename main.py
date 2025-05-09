@@ -29,6 +29,12 @@ class MyForm(QDialog):
             lista.append(wynik_losowania)
         self.ui.losowanieEdit.setText(str(lista))
 
+        trafienia = 0
+        for i in str(wynik_losowania):
+            if i in str(obstawione_liczby):
+                trafienia += 1
+        self.ui.trafieniaButton.setText(str(trafienia))
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MyForm()
